@@ -1,19 +1,40 @@
+# Project Setup Guide
 
+## Initial Setup
+# Clone the repository to your local machine
 git clone <repository-url>
+
+# Navigate to the project directory
 cd <project-folder>
 
-#create env variables 
+## Environment Setup
+# Create a virtual environment to isolate project dependencies
 python -m venv env
-env\Scripts\activate
 
-#install requirements
+# Activate the virtual environment
+# Note: On Windows, use this command
+env\Scripts\activate
+# Note: On Linux/Mac, use this command instead
+# source env/bin/activate
+
+## Dependencies Installation
+# Install all required packages defined in requirements.txt
 pip install -r requirements.txt
 
-#run migrations
+## Database Setup
+# Apply database migrations to set up your database schema
 python manage.py migrate
 
-#create user to access the admin 
+## Admin Account Setup
+# Create an administrator account to access the Django admin interface
+# You'll be prompted to enter username, email, and password
 python manage.py createsuperuser
 
-#add your ip address so later you connect it with the app 
+## Running the Server
+# Start the development server with your IP address
+# Replace <your-ip-address> with your actual IP (e.g., 192.168.1.100:8000)
+# This allows other devices on your network to access the application
 python manage.py runserver <your-ip-address>
+
+# For local development only, you can simply use:
+# python manage.py runserver
